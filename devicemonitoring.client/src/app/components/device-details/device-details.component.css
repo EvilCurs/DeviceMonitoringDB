@@ -1,0 +1,148 @@
+.session-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.session-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+  .session-header h1 {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+  }
+
+.header-icon {
+  margin-right: 0.5rem;
+  color: #3f51b5;
+}
+
+.device-id {
+  color: #7f8c8d;
+  font-family: 'Courier New', monospace;
+  background: #f5f5f5;
+  padding: 0.5rem;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.session-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.no-sessions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  background: #fafafa;
+  border-radius: 8px;
+  color: #7f8c8d;
+}
+
+  .no-sessions mat-icon {
+    font-size: 3rem;
+    width: auto;
+    height: auto;
+    margin-bottom: 1rem;
+    color: #bdc3c7;
+  }
+
+.session-card {
+  display: flex;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+  .session-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+.session-status {
+  width: 6px;
+  background: #e0e0e0;
+}
+
+  .session-status.active {
+    background: #4caf50;
+  }
+
+.session-info {
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.session-time {
+  display: flex;
+  gap: 2rem;
+}
+
+.time-block {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.time-icon {
+  color: #3f51b5;
+  margin-top: 4px;
+}
+
+.time-label {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  margin-bottom: 0.2rem;
+}
+
+.time-value {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.session-meta {
+  display: flex;
+  gap: 2rem;
+  padding-top: 1rem;
+  border-top: 1px dashed #e0e0e0;
+}
+
+.meta-block {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.meta-icon {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .session-time, .session-meta {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .session-info {
+    padding: 1rem;
+  }
+}

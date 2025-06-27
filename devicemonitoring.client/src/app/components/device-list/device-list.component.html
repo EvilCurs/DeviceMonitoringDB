@@ -1,0 +1,23 @@
+<div class="device-list-container">
+  <div class="header">
+    <h1><span class="icon">📱</span>My Smart Devices</h1>
+    <p class="subtitle">Connected devices: {{devices.length}}</p> <!-- Добавлен счётчик -->
+  </div>
+
+  <div class="devices-grid">
+    <div *ngFor="let device of devices" class="device-card" (click)="viewDetails(device.id)">
+      <div class="device-icon">💻</div>
+      <div class="device-info">
+        <h3>{{device.name}}</h3>
+        <p>ID: {{device.id}}</p>
+      </div>
+      <div class="device-arrow">→</div>
+    </div>
+
+    <div *ngIf="devices.length === 0" class="empty-state">
+      <div class="empty-icon">😕</div>
+      <h3>No devices found</h3>
+      <p>Add a new device to get started</p>
+    </div>
+  </div>
+</div>

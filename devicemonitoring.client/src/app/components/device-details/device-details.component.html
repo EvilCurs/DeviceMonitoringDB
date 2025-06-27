@@ -1,0 +1,54 @@
+<div class="session-container">
+  <div class="session-header">
+    <h1>
+      <mat-icon class="header-icon">devices</mat-icon>
+      Device Sessions
+    </h1>
+    <div class="device-id">Device ID: {{deviceId}}</div>
+  </div>
+
+  <div class="session-list">
+    <div *ngIf="sessions.length === 0" class="no-sessions">
+      <mat-icon>hourglass_empty</mat-icon>
+      <p>No sessions available for this device</p>
+    </div>
+
+    <div *ngFor="let session of sessions" class="session-card">
+      <div class="session-status" [class.active]="!session.endTime"></div>
+
+      <div class="session-info">
+        <div class="session-time">
+          <div class="time-block">
+            <mat-icon class="time-icon">schedule</mat-icon>
+            <div>
+              <div class="time-label">Start Time</div>
+              <div class="time-value">{{session.startTime | date:'medium'}}</div>
+            </div>
+          </div>
+
+          <div class="time-block">
+            <mat-icon class="time-icon">timer_off</mat-icon>
+            <div>
+              <div class="time-label">End Time</div>
+              <div class="time-value">
+                {{session.endTime ? (session.endTime | date:'medium') : 'Active'}}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="session-meta">
+          <div class="meta-block">
+            <mat-icon class="meta-icon">av_timer</mat-icon>
+            <span>{{formatDuration(session.startTime, session.endTime)}}</span>
+          </div>
+
+          <div class="meta-block">
+            <mat-icon class="meta-icon">code</mat-icon>
+            <span>Version: {{session.version}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
